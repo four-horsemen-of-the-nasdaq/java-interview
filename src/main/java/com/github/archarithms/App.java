@@ -23,6 +23,7 @@ public class App
       input = input.replaceAll("\\s+"," ");
       //Captialize Words
       char[] charArray = input.toCharArray();
+      //set foundspace true so first letter is always capatilized
       boolean foundSpace = true;
       for(int i=0; i < charArray.length; i++)
       {
@@ -49,6 +50,7 @@ public class App
     {
       throw new NullPointerException();
     }
+    //convert from unix epoch time to human readable time
     else return LocalDateTime.ofInstant(Instant.ofEpochSecond(inpUnixSeconds),
             ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("MMMM d, YYYY"));
   }
